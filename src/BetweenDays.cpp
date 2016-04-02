@@ -69,41 +69,7 @@ int days(int y1, int y2, int m1, int m2, int d1, int d2)
 
 int between_days(struct node *date1head, struct node *date2head){
 	if (date1head != NULL && date2head != NULL){
-		int y1 = 0, y2 = 0, m1 = 0, m2 = 0, d1 = 0, d2 = 0;
-		int count = 0;
-		// 0->1->0->1->2->0->0->4 .
-		while (date1head != NULL && count != 2){
-			d1 = (d1 * 10) + (date1head->data);
-			date1head = date1head->next;
-			count++;
-		}
-		while (date1head != NULL && count != 4){
-			m1 = (m1 * 10) + (date1head->data);
-			date1head = date1head->next;
-			count++;
-		}
-		while (date1head != NULL && count != 8){
-			y1 = (y1 * 10) + (date1head->data);
-			date1head = date1head->next;
-			count++;
-		}
-		count = 0;
-		while (date2head != NULL && count != 2){
-			d2 = (d2 * 10) + (date2head->data);
-			date2head = date2head->next;
-			count++;
-		}
-		while (date2head != NULL && count != 4){
-			m2 = (m2 * 10) + (date2head->data);
-			date2head = date2head->next;
-			count++;
-		}
-		while (date2head != NULL && count != 8){
-			y2 = (y2 * 10) + (date2head->data);
-			date2head = date2head->next;
-			count++;
-		}
-		return days(y1, y2, m1, m2, d1, d2);
+
 	}
 	return -1;
 }
